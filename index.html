@@ -1001,16 +1001,15 @@
 
         <div class="label">ご来店回数<span class="required">必須</span></div>
         <div class="visit-buttons">
-            <button type="button" id="firstVisit" onclick="selectVisit(this)">1回目〈30分〉</button>
-            <button type="button" id="repeatVisit" onclick="selectVisit(this)">2回目以降〈0分〉</button>
+            <button type="button" id="firstVisit" onclick="selectVisit(this)">1回目</button>
+            <button type="button" id="repeatVisit" onclick="selectVisit(this)">2回目以降</button>
         </div>
 
         <div class="label" id="course">メニューをお選びください<span class="required">必須</span></div>
         <div class="info-text">※メニューを選択すると空き状況のカレンダーが表示されます</div>
         <div class="menu-sections">
-            <button type="button" onclick="showMenu('male')">ブライダルコース</button>
-            <button type="button" onclick="showMenu('female')">シェービングコース</button>
-            <button type="button" onclick="showMenu('whitening')">マッサージコース</button>
+            <button type="button" onclick="showMenu('facial')">フェイシャル</button>
+            <button type="button" onclick="showMenu('body')">ボディ【ホットストーン】</button>
         </div>
 
         <!-- メニュー表示エリア（選択されたメニュー名がここに出る） -->
@@ -1018,99 +1017,33 @@
 
         <div id="treatment-text" style="display: none; margin-bottom: 10px;"></div>
 
-        <div id="male" class="menu-section">
+        <div id="facial" class="menu-section">
             <div class="labeltyuuou">
-                <span class="highlight-text">◆ブライダルコース◆</span>
+                <span class="highlight-text">◆フェイシャル◆</span>
             </div>
             <div class="info-text">▼メニューをお選びください▼</div>
             <div class="symptoms">
-                <button type="button" onclick="selectSymptom(this, 'treatment1')" data-category="ブライダルコース"
-                    data-price="0">和装プラン〈30分〉</button>
-                <button type="button" onclick="selectSymptom(this, 'treatment2')" data-category="ブライダルコース"
-                    data-price="0">洋装プランA〈60分〉</button>
-                <button type="button" onclick="selectSymptom(this)" data-category="ブライダルコース"
-                    data-price="0">洋装プランB〈120分〉</button>
-                <button type="button" onclick="selectSymptom(this)" data-category="ブライダルコース"
-                    data-price="0">洋装プランC〈30分〉</button>
+                <button type="button" onclick="selectSymptom(this)" data-category="フェイシャル" data-price="0">フェイシャルエステ
+                    (75分)</button>
+                <button type="button" onclick="selectSymptom(this)" data-category="フェイシャル" data-price="0">フェイシャルエステ＋BRB
+                    (90分)</button>
             </div>
             <div class="labeltyuuou">
-                <span class="highlight-text">ブライダルコース：オプション</span>
+                <span class="highlight-text">フェイシャル：オプション</span>
             </div>
             <div class="irradiations">
-                <button type="button" id="firstirradiations" onclick="selectirradiations(this)"
-                    data-price="0">眉カット〈30分〉</button>
-                <button type="button" id="repeatirradiations" onclick="selectirradiations(this)"
-                    data-price="0">ベーシックマッサージ</button>
-                <button type="button" id="sanirradiations" onclick="selectirradiations(this)"
-                    data-price="0">リラックスマッサージ</button>
+                <button type="button" onclick="selectirradiations(this)" data-price="0">背中ケア【美造形ケア】 (15分)</button>
             </div>
         </div>
 
-        <div id="female" class="menu-section">
+        <div id="body" class="menu-section">
             <div class="labeltyuuou">
-                <span class="highlight-text">◆シェービングコース◆</span>
+                <span class="highlight-text">◆ボディ【ホットストーン】◆</span>
             </div>
             <div class="info-text">▼メニューをお選びください▼</div>
             <div class="symptoms">
-                <button type="button" onclick="selectSymptom(this)" data-category="シェービングコース"
-                    data-price="0">リラックスコース〈60分〉</button>
-                <button type="button" onclick="selectSymptom(this)" data-category="シェービングコース"
-                    data-price="0">ベーシックコース〈30分〉</button>
-                <button type="button" onclick="selectSymptom(this)" data-category="シェービングコース"
-                    data-price="0">スピードコース〈90分〉</button>
-            </div>
-            <div class="labeltyuuou">
-                <span class="highlight-text">シェービングコース：オプション</span>
-            </div>
-            <div class="irradiations">
-                <button type="button" id="firstirradiations" onclick="selectirradiations(this)"
-                    data-price="0">眉カット〈30分〉</button>
-                <button type="button" id="repeatirradiations" onclick="selectirradiations(this)"
-                    data-price="0">襟足〈30分〉</button>
-                <button type="button" id="sanirradiations" onclick="selectirradiations(this)" data-price="0">背中</button>
-                <button type="button" id="yonirradiations" onclick="selectirradiations(this)"
-                    data-price="0">背中(腰まで)〈30分〉</button>
-                <button type="button" id="goirradiations" onclick="selectirradiations(this)"
-                    data-price="0">デコルテ〈30分〉</button>
-                <button type="button" id="rokuirradiations" onclick="selectirradiations(this)"
-                    data-price="0">腕〈30分〉</button>
-                <button type="button" id="sitiirradiations" onclick="selectirradiations(this)"
-                    data-price="0">保湿パック〈30分〉</button>
-                <button type="button" id="hatiirradiations" onclick="selectirradiations(this)"
-                    data-price="0">美白パック〈30分〉</button>
-            </div>
-        </div>
-
-        <div id="whitening" class="menu-section">
-            <div class="labeltyuuou">
-                <span class="highlight-text">◆マッサージコース◆</span>
-            </div>
-            <div class="info-text">▼メニューをお選びください▼</div>
-            <div class="symptoms">
-                <button type="button" onclick="selectSymptom(this)" data-category="マッサージコース"
-                    data-price="0">リラックスマッサージ〈30分〉</button>
-                <button type="button" onclick="selectSymptom(this)" data-category="マッサージコース"
-                    data-price="0">ベーシックマッサージ〈30分〉</button>
-            </div>
-            <div class="labeltyuuou">
-                <span class="highlight-text">マッサージコース：オプション</span>
-            </div>
-            <div class="irradiations">
-                <button type="button" id="firstirradiations" onclick="selectirradiations(this)"
-                    data-price="0">眉カット〈30分〉</button>
-                <button type="button" id="repeatirradiations" onclick="selectirradiations(this)"
-                    data-price="0">襟足〈30分〉</button>
-                <button type="button" id="sanirradiations" onclick="selectirradiations(this)" data-price="0">背中</button>
-                <button type="button" id="yonirradiations" onclick="selectirradiations(this)"
-                    data-price="0">背中(腰まで)〈30分〉</button>
-                <button type="button" id="goirradiations" onclick="selectirradiations(this)"
-                    data-price="0">デコルテ〈30分〉</button>
-                <button type="button" id="rokuirradiations" onclick="selectirradiations(this)"
-                    data-price="0">腕〈30分〉</button>
-                <button type="button" id="sitiirradiations" onclick="selectirradiations(this)"
-                    data-price="0">保湿パック〈30分〉</button>
-                <button type="button" id="hatiirradiations" onclick="selectirradiations(this)"
-                    data-price="0">美白パック〈30分〉</button>
+                <button type="button" onclick="selectSymptom(this)" data-category="ボディ【ホットストーン】"
+                    data-price="0">ボディ【ホットストーン】 (105分)</button>
             </div>
         </div>
 
@@ -1194,36 +1127,22 @@
 
         // 訪問回数ごとの時間設定 (例：初めて=20分、2回目以降=15分)
         let visitTimes = {
-            '1回目〈30分〉': 30,
+            '1回目〈30分〉': 0,
             '2回目以降〈0分〉': 0
         };
 
         let selectedVisitTime = 0; // 訪問回数で選択された時間
 
-        // 訪問回数ごとの時間設定 (例：初めて=20分、2回目以降=15分)
         let irradiationsTimes = {
-            '眉カット〈30分〉': 30,
-            '襟足〈30分〉': 30,
-            '背中(キャミソールライン)〈30分〉': 30,
-            '背中(腰まで)〈30分〉': 30,
-            'デコルテ〈30分〉': 30,
-            '腕〈30分〉': 30,
-            '保湿パック〈30分〉': 30,
-            'ベーシックマッサージ(パック付き)〈30分〉': 30,
-            'リラックスマッサージの(パック付き)〈30分〉': 30,
-            '美白パック〈30分〉': 30
+            '背中ケア【美造形ケア】 (15分)': 15
         };
 
         let selectedirradiationsTime = 0; // 訪問回数で選択された時間
 
         let menuTimes = {
-            '和装プラン〈30分〉': 30,
-            '洋装プランA〈60分〉': 60,
-            '洋装プランB〈120分〉': 420,
-            '洋装プランC〈30分〉': 30,
-            'リラックスコース〈60分〉': 60,
-            'ベーシックコース〈30分〉': 30,
-            'スピードコース〈90分〉': 90
+            'フェイシャルエステ (75分)': 75,
+            'フェイシャルエステ＋BRB (90分)': 90,
+            'ボディ【ホットストーン】 (105分)': 105
         };
 
 
@@ -1802,11 +1721,14 @@
             const table = calendar.querySelector('table tbody');
 
             const times = [
-                '09:00', '09:30', '10:00', '10:30', '11:00', '11:30',
-                '12:00', '12:30', '13:00', '13:30',
-                '14:00', '14:30', '15:00', '15:30',
-                '16:00', '16:30', '17:00', '17:30',
-                '18:00'
+                '11:00', '11:15', '11:30', '11:45',
+                '12:00', '12:15', '12:30', '12:45',
+                '13:00', '13:15', '13:30', '13:45',
+                '14:00', '14:15', '14:30', '14:45',
+                '15:00', '15:15', '15:30', '15:45',
+                '16:00', '16:15', '16:30', '16:45',
+                '17:00', '17:15', '17:30', '17:45',
+                '18:00', '18:15', '18:30'
             ];
 
             if (table.rows.length === 0) {
@@ -1829,6 +1751,14 @@
             // テーブルのヘッダーを更新
             updateCalendarHeader(currentDate);
 
+            // 祝日リスト（判定用）
+            const holidays = [
+                '2025-02-11', '2025-02-23', '2025-02-24', '2025-03-20', '2025-04-29', '2025-05-03', '2025-05-04', '2025-05-05', '2025-05-06', '2025-07-21', '2025-08-11', '2025-09-15', '2025-09-23', '2025-10-13', '2025-11-03', '2025-11-23', '2025-11-24',
+                '2026-01-01', '2026-01-12', '2026-02-11', '2026-02-23', '2026-03-20', '2026-04-29', '2026-05-03', '2026-05-04', '2026-05-05', '2026-05-06', '2026-07-20', '2026-08-11', '2026-09-21', '2026-09-22', '2026-09-23', '2026-10-12', '2026-11-03', '2026-11-23',
+                '2027-01-01', '2027-01-11', '2027-02-11', '2027-02-23', '2027-03-20', '2027-04-29', '2027-05-03', '2027-05-04', '2027-05-05', '2027-07-19', '2027-08-11', '2027-09-20', '2027-09-23', '2027-10-11', '2027-11-03', '2027-11-23',
+                '2028-01-01', '2028-01-10', '2028-02-11', '2028-02-23', '2028-03-20', '2028-04-29', '2028-05-03', '2028-05-04', '2028-05-05', '2028-07-17', '2028-08-11', '2028-09-18', '2028-09-22', '2028-10-09', '2028-11-03', '2028-11-23'
+            ];
+
             // 各セルを空白にリセットし、クラスもリセット
             for (let row of table.rows) {
                 for (let i = 1; i < row.cells.length; i++) {
@@ -1846,6 +1776,24 @@
                 const day = new Date(currentDate);
                 day.setDate(day.getDate() + i);
 
+                const formattedDate = `${day.getFullYear()}-${(day.getMonth() + 1).toString().padStart(2, '0')}-${day.getDate().toString().padStart(2, '0')}`;
+                const isHoliday = holidays.includes(formattedDate);
+                const dayOfWeek = day.getDay(); // 0:Sun, 1:Mon, ..., 6:Sat
+
+                // 定休日判定
+                // 日曜日かつ祝日でない場合は定休日
+                let isClosed = false;
+                if (dayOfWeek === 0 && !isHoliday) {
+                    isClosed = true;
+                }
+
+                // 開始時間判定
+                // 火曜日は13:00〜、それ以外（祝日含む）は11:00〜
+                let openHour = 11;
+                if (dayOfWeek === 2 && !isHoliday) {
+                    openHour = 13;
+                }
+
                 let businessEventTimes = []; // 営業日のイベント時間帯を記録する配列
 
                 availability.forEach(slot => {
@@ -1858,104 +1806,86 @@
 
                 for (let j = 0; j < times.length; j++) {
                     const cell = table.rows[j].cells[i + 1];
+                    const [h, m] = times[j].split(':').map(Number);
 
                     const slotStart = new Date(day);
-                    slotStart.setHours(parseInt(times[j].split(':')[0]), parseInt(times[j].split(':')[1]), 0, 0);
+                    slotStart.setHours(h, m, 0, 0);
 
                     let slotEnd = new Date(slotStart);
                     let menuDuration = selectedMenuTime || 10;
                     let visitDuration = selectedVisitTime || 0;
                     let irradiationsDuration = selectedirradiationsTime || 0;
 
-                    // 仮に終了時間を計算
+                    // 終了時間を計算
                     slotEnd.setMinutes(slotStart.getMinutes() + menuDuration + visitDuration + irradiationsDuration);
 
-                    // 日付を跨ぐ場合は✕
+                    // --- 基本的なNG判定 ---
+
+                    // 1. 定休日
+                    if (isClosed) {
+                        cell.textContent = '✕';
+                        cell.classList.add('unavailable');
+                        continue;
+                    }
+
+                    // 2. 営業時間外（開始前）
+                    if (h < openHour) {
+                        cell.textContent = '✕';
+                        cell.classList.add('unavailable');
+                        continue;
+                    }
+
+                    // 3. 日付を跨ぐ場合は✕
                     if (slotEnd.getDate() !== slotStart.getDate()) {
                         cell.textContent = '✕';
                         cell.classList.add('unavailable');
                         continue;
                     }
 
-                    // 18時以降に終了する予約は✕
-                    if (slotEnd.getHours() === 18 && slotEnd.getMinutes() > 0 || slotEnd.getHours() > 18) {
+                    // 4. 最終受付時間（枠の開始時刻）が18:30を超える場合
+                    if (h > 18 || (h === 18 && m > 30)) {
                         cell.textContent = '✕';
                         cell.classList.add('unavailable');
                         continue;
                     }
 
-                    // 過去の時間は✕
+                    // 5. 過去の時間
                     if (slotStart < now) {
                         cell.textContent = '✕';
                         cell.classList.add('unavailable');
                         continue;
                     }
 
-                    // 当日の営業時間内かどうか（Googleカレンダーイベント）
-                    const isBusinessEventTime = businessEventTimes.some(event => {
-                        return slotStart >= event.start && slotEnd <= event.end;
-                    });
+                    // --- 予約重複判定 ---
 
-                    // 通常の営業日（手動設定されたbusinessDays）
-                    const isBusinessDay = businessDays.some(businessDay => {
-                        const businessDayStart = new Date(businessDay.start);
-                        const businessDayEnd = new Date(businessDay.end);
-                        return slotStart >= businessDayStart && slotEnd <= businessDayEnd;
-                    });
-
-                    // 営業日以外の重複イベントを取得
                     const relevantEvents = availability.filter(slot => {
                         const eventStart = new Date(slot.startTime);
                         const eventEnd = new Date(slot.endTime);
                         return slot.title !== "営業日" && eventStart < slotEnd && eventEnd > slotStart;
                     });
 
-                    // 同時刻に3件以上予約があると✕
+                    // 同時刻に1件以上予約があると✕ (1コマの最大予約数: 1)
                     let overLimit = false;
 
-                    // 重複チェックロジック（修正版）
+                    // 重複チェックロジック
                     for (let checkTime = new Date(slotStart.getTime()); checkTime < slotEnd; checkTime.setMinutes(checkTime.getMinutes() + 1)) {
-                        let overlapping = 1;
+                        let overlapping = 0;
                         relevantEvents.forEach(slot => {
-                            // ▼▼▼ ここから変更 ▼▼▼
                             if (new Date(slot.startTime) <= checkTime && new Date(slot.endTime) > checkTime) {
-                                // 説明文に「洋装プランA〈60分〉」が含まれていれば+2（これだけで枠が埋まる）、それ以外は通常通り+1
-                                if (slot.description && slot.description.includes('・洋装プランA〈60分〉')) {
-                                    overlapping += 3;
-                                } else {
-                                    overlapping++;
-                                }
+                                overlapping++;
                             }
-                            // ▲▲▲ ここまで変更 ▲▲▲
                         });
-                        if (overlapping >= 3) { overLimit = true; break; }
+                        // 最大予約数: 1
+                        if (overlapping >= 1) { overLimit = true; break; }
                     }
 
-                    // 最終的な可否判定
-                    if (isBusinessEventTime && !overLimit) {
-                        cell.textContent = '◯';
-                        cell.classList.add('available');
-                    } else if (isBusinessEventTime && overLimit) {
-                        cell.textContent = '✕';
-                        cell.classList.add('unavailable');
-                    } else if (slotStart.getDay() === 0 && !isBusinessDay && businessEventTimes.length === 0) {
-                        // 日曜日で、営業日でない場合は ✕
-                        cell.textContent = '✕';
-                        cell.classList.add('unavailable');
-                    } else if (isBusinessDay && !overLimit) {
-                        cell.textContent = '◯';
-                        cell.classList.add('available');
-                    } else if (!isBusinessEventTime && businessEventTimes.length > 0) {
-                        cell.textContent = '✕';
-                        cell.classList.add('unavailable');
-                    } else if (!overLimit) {
+                    if (!overLimit) {
                         cell.textContent = '◯';
                         cell.classList.add('available');
                     } else {
                         cell.textContent = '✕';
                         cell.classList.add('unavailable');
                     }
-
 
                     // セルにこの時間帯のデータ属性を追加（ISO形式の日時）
                     cell.setAttribute('data-date', slotStart.toISOString());
