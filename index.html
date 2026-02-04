@@ -1682,7 +1682,7 @@
                 return;
             }
 
-            const url = 'https://script.google.com/macros/s/AKfycbxBT80IfewD-flN5r9Fyonlq5-4jl5ek0b_hN9HJuH-nGvtuFXeMcxLC8pmvtQsObuo/exec' +
+            const url = 'https://script.google.com/macros/s/AKfycbzugOyBCO58pwEqErHY2dkB5HLJBrJhHTWoBk0Z8iiOaUs0tpRLKh7Lo9iS3MJ4TWLm/exec' +
                 `?startTime=${startTime.toISOString()}&endTime=${endTime.toISOString()}`;
 
             try {
@@ -1836,8 +1836,12 @@
                         continue;
                     }
 
-                    // 4. 最終受付時間（枠の開始時刻）が18:30を超える場合
-                    if (h > 18 || (h === 18 && m > 30)) {
+                    // 19:30以降に終了する予約を不可にする
+                    if (slotEnd.getHours() === 19 && slotEnd.getMinutes() > 30) {
+                        cell.textContent = '✕';
+                        cell.classList.add('unavailable');
+                        continue;
+                    } else if (slotEnd.getHours() > 19) {
                         cell.textContent = '✕';
                         cell.classList.add('unavailable');
                         continue;
@@ -2024,8 +2028,3 @@
 </body>
 
 </html>
-
-
-
-
-
