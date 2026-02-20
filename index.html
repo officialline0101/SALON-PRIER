@@ -536,6 +536,46 @@
             border-top: none;
         }
 
+        .menu-item-group {
+            width: 100%;
+            margin-bottom: 20px;
+        }
+
+        /* グループ内のボタン: 下の角を丸めず、マージンを0に */
+        .menu-item-group button {
+            margin-bottom: 0 !important;
+            border-bottom-left-radius: 0 !important;
+            border-bottom-right-radius: 0 !important;
+            border-bottom: 1px solid #ddd;
+            /* 境界線を薄く */
+            width: 100%;
+            /* 横幅一杯に */
+            display: block;
+        }
+
+        /* グループ内の価格テキスト: 上の角を丸めず、枠線で囲む */
+        .menu-price-text {
+            font-size: 13px;
+            color: #333;
+            background-color: #f9f9f9;
+            /* 少し背景色をつける */
+            padding: 8px;
+            border: 1px solid #2e2e2e;
+            /* ボタンと同じ枠線の色に合わせる */
+            border-top: none;
+            /* ボタンとつながっているように見せる */
+            border-bottom-left-radius: 4px;
+            border-bottom-right-radius: 4px;
+            text-align: center;
+            line-height: 1.4;
+            margin-top: 0;
+            margin-bottom: 0;
+            width: 100%;
+            /* 横幅一杯に */
+            box-sizing: border-box;
+            /* パディングを含めて幅計算 */
+        }
+
         /* スマホ対応 */
         @media (max-width: 768px) {
             .info-text {
@@ -990,7 +1030,7 @@
     </div>
 
     <div class="container">
-        <h1>式会社サワノコーポレーション/SALON PRIER<br>予約フォーム</h1>
+        <h1>株式会社サワノコーポレーション/SALON PRIER<br>予約フォーム</h1>
         <div class="label"
             style="background-color: #f8d7da; color: #721c24; border: 1px solid #f5c6cb; margin-bottom: 20px;">
             リズミックボクシングのご予約はチャット・お電話にてお問い合わせください。
@@ -1025,16 +1065,25 @@
             </div>
             <div class="info-text">▼メニューをお選びください▼</div>
             <div class="symptoms">
-                <button type="button" onclick="selectSymptom(this)" data-category="フェイシャル"
-                    data-price="0">フェイシャルエステ(75分)</button>
-                <button type="button" onclick="selectSymptom(this)" data-category="フェイシャル"
-                    data-price="0">フェイシャルエステ＋BRB(90分)</button>
+                <div class="menu-item-group">
+                    <button type="button" onclick="selectSymptom(this)" data-category="フェイシャル" data-price="0">フェイシャルエステ
+                        (75分)</button>
+                    <div class="menu-price-text">非会員様：5,500円(税込)　　会員様：無料</div>
+                </div>
+                <div class="menu-item-group">
+                    <button type="button" onclick="selectSymptom(this)" data-category="フェイシャル"
+                        data-price="0">フェイシャルエステ＋BRB (90分)</button>
+                    <div class="menu-price-text">非会員様：8,800円(税込)　　会員様：無料</div>
+                </div>
             </div>
             <div class="labeltyuuou">
                 <span class="highlight-text">フェイシャル：オプション</span>
             </div>
             <div class="irradiations">
-                <button type="button" onclick="selectirradiations(this)" data-price="0">背中ケア【美造形ケア】 (15分)</button>
+                <div class="menu-item-group">
+                    <button type="button" onclick="selectirradiations(this)" data-price="0">背中ケア【美造形ケア】 (15分)</button>
+                    <div class="menu-price-text">チケット1枚/5,500円(税込)</div>
+                </div>
             </div>
         </div>
 
@@ -1044,8 +1093,11 @@
             </div>
             <div class="info-text">▼メニューをお選びください▼</div>
             <div class="symptoms">
-                <button type="button" onclick="selectSymptom(this)" data-category="ボディ【ホットストーン】"
-                    data-price="0">ボディ【ホットストーン】 (105分)</button>
+                <div class="menu-item-group">
+                    <button type="button" onclick="selectSymptom(this)" data-category="ボディ【ホットストーン】"
+                        data-price="0">ボディ【ホットストーン】 (105分)</button>
+                    <div class="menu-price-text">非会員様：11,000円(税込)　　会員様：無料</div>
+                </div>
             </div>
         </div>
 
@@ -1142,8 +1194,8 @@
         let selectedirradiationsTime = 0; // 訪問回数で選択された時間
 
         let menuTimes = {
-            'フェイシャルエステ(75分)': 75,
-            'フェイシャルエステ＋BRB(90分)': 90,
+            'フェイシャルエステ (75分)': 75,
+            'フェイシャルエステ＋BRB (90分)': 90,
             'ボディ【ホットストーン】 (105分)': 105
         };
 
@@ -2028,5 +2080,3 @@
 </body>
 
 </html>
-
-
