@@ -242,8 +242,10 @@
         .symptoms button.active,
         .menu-sections button.active,
         .irradiations button.active {
-            background-color: #ffffff;
+            background-color: #e8f5e9;
             color: #141414;
+            border: 2px solid #2e7d32;
+            position: relative;
         }
 
         .date-inputs input[type="datetime-local"] {
@@ -611,8 +613,9 @@
 
         .symptoms button.active,
         .options button.active {
-            background-color: #ffffff;
+            background-color: #e8f5e9;
             color: #000000;
+            border: 2px solid #2e7d32;
         }
 
         .highlight-background {
@@ -731,11 +734,27 @@
         }
 
         button.active {
-            outline: 1px solid #2b2b2b;
-            /* ここで枠線を指定 */
-            outline-offset: 2px;
-            /* 外側に色を追加 */
-            box-shadow: 0 0 0 3px #2b2b2b
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(46, 125, 50, 0.3);
+            background-color: #e8f5e9 !important;
+            border: 2px solid #2e7d32 !important;
+            color: #1b5e20 !important;
+            font-weight: bold;
+            position: relative;
+        }
+
+        /* 選択中ボタンにチェックマークを表示 */
+        .visit-buttons button.active::after,
+        .symptoms button.active::after,
+        .menu-sections button.active::after,
+        .irradiations button.active::after {
+            content: '✔';
+            position: absolute;
+            top: 4px;
+            right: 8px;
+            font-size: 14px;
+            color: #2e7d32;
+            font-weight: bold;
         }
 
         /* 必須マークのスタイル */
@@ -1058,9 +1077,6 @@
             <button type="button" onclick="showMenu('body')">ボディ【ホットストーン】</button>
         </div>
 
-        <!-- メニュー表示エリア（選択されたメニュー名がここに出る） -->
-        <div id="selected-menus-display" style="display: none; font-weight: bold; margin-top: 10px;"></div>
-
         <div id="treatment-text" style="display: none; margin-bottom: 10px;"></div>
 
         <div id="facial" class="menu-section">
@@ -1103,6 +1119,9 @@
                 </div>
             </div>
         </div>
+
+        <!-- メニュー表示エリア（選択されたメニュー名がここに出る）→ 希望日時の上に配置 -->
+        <div id="selected-menus-display" style="display: none; font-weight: bold; margin-top: 10px;"></div>
 
         <div class="label">希望日時<span class="required">必須</span></div>
         <div class="calendar-container">
@@ -1147,6 +1166,7 @@
                 <div class="loading-text">読み込み中...</div>
             </div>
         </div>
+
 
         <div class="label">メッセージ<br>（質問等お気軽にご記入ください）</div>
         <textarea id="message" rows="4" placeholder="メッセージを入力してください"></textarea>
@@ -2083,5 +2103,4 @@
 </body>
 
 </html>
-
 
